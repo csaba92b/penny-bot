@@ -9,17 +9,14 @@ from decimal import Decimal as D
 import pytz
 from inputimeout import inputimeout, TimeoutOccurred
 
-tz = pytz.timezone('Europe/Budapest')
-
-SOCKET = "wss://stream.binance.com:9443/ws/ltcusdt@kline_1m"
-closes = []
-
+tz = pytz.timezone('Europe/Budapest') # choose your timezone
 client = Client(config.API_KEY, config.SECRET_KEY)
+SOCKET = "paste your ws setup here"
+TRADE_SYMBOL = 'paste your trading symbol here'
 
 RSI_PERIOD = 14
 RSI_OVERBOUGHT = 70
 RSI_OVERSOLD = 30
-TRADE_SYMBOL = 'LTCUSDT'
 # TRADE_QUANTITY = 0.084 #hard coding it may produce errors
 MIN_TRADING_USD = 10.3 # rule by binance
 ORDER_DATA = ''
@@ -27,6 +24,7 @@ fee = 0.001
 last_buy = 0 # set 0
 n_of_runs = 0
 sl_change = None # to track if there was a change for stop loss
+closes = []
 
 
 def save_exception(e,string):
