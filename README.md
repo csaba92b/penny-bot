@@ -3,7 +3,7 @@ It's a trading bot written in python!
 Based on the current RSI its creates buy or sell orders.
 To make it work you would need:
  - a binance account, as trading is done on the given platform!
- - when the account is ready, you need to generate an API.
+ - when the account is ready, you need to generate your API keys.
  - when it's done, you have to create a ```config.py``` file which should only contain your API keys like this:
  
  ```API_KEY = "YOUR_API_KEY_PASTED_HERE"```
