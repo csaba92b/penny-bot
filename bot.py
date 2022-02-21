@@ -11,8 +11,8 @@ from inputimeout import inputimeout, TimeoutOccurred
 
 tz = pytz.timezone('Europe/Budapest') # choose your timezone
 client = Client(config.API_KEY, config.SECRET_KEY)
-SOCKET = "paste your ws setup here"
-TRADE_SYMBOL = 'paste your trading symbol here'
+SOCKET = config.SOCKET # paste your ws setup here
+TRADE_SYMBOL = config.TRADE_SYMBOL # 'paste your trading symbol here'
 
 RSI_PERIOD = 14
 RSI_OVERBOUGHT = 70
@@ -207,7 +207,7 @@ def stop_loss(close):
     # but takes away any possible potential income
     global in_position, last_buy, closes, TRADE_QUANTITY
     print(f'check for stop loss, buying price: {last_buy} new price {close}')
-    if last_buy > close and in_position:
+    if last_buy - 0.5 > close and in_position:
         print('******** SELL ********')
         order_succeeded = order(SIDE_SELL, TRADE_QUANTITY, TRADE_SYMBOL)
         if order_succeeded:
