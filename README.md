@@ -10,7 +10,7 @@ To make it work you would need:
  
  ```SECRET_KEY = "YOUR_SECRET_KEY_PASTED_HERE"```
  
- - choose your trading currency and set it up in the ```bot.py``` file:
+ - choose your trading currency and set it up in the ```config.py``` file:
  
  ex.: ```TRADE_SYMBOL = 'BTCUSDT'``` or 'ETHUSDT' any of the many, choose one not that popular but stable.
  
